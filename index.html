@@ -1,143 +1,175 @@
 <!DOCTYPE html>
 <html>
-<head>
+
+
 <style>
-body {
-	margin: 0;
-	padding: 0;
+html, body {
+	margin : 0;
+	padding : 0;
+	height: 100%
 }
-
-
-.img{
-	float: right;
+.img {
+	float : right;
+	height: 100%;
+	width: 20%;
+	cursor: not-allowed;
 }
 .clearfix::after{
-	content: "";
-	clear: both;
-	display: table;
+	content = "";
+	clear = both;
+	display = table;
 }
-
+.inner { 
+	position:absolute;
+}
+.button {
+	background-color: #000000;
+	border-radius: 10%;
+	color: #CCCCCC;
+	padding: 2% 5%;
+	text-align: center;
+	text-decoration: underline;
+	display: inline-block;
+	font-size: 15px;
+	margin: 0px 0px;
+}
 ul.a {
-	list-style-type: circle
+	list-style-type: circle;
+	font-family: Courier;
 }
-#grad{
-	background-image: linear-gradient(#078791,#5CDDE7);
-	border: 3px solid black;
+#Header {
+	border : 3px solid black;
+	height : 50%;
+	background-image: linear-gradient(#E72090,#9322C4);
 }
-#grad2{
-	background-image: linear-gradient(#5CDDE7,#89EBF3);
-}
+#Home {
+	background-image: linear-gradient(#8B33F2,#2CCCEF);
+	height : 50%;
 
-#grad3{
-	background-image: linear-gradient(#89EBF3,#CAF5F5);
 }
-
-#grad4 {
-	background-image:linear-gradient(#CAF5F5,#F1F7F7);
+#Teaching {
+	background-image: linear-gradient(#8B33F2,#2CCCEF);
+	height : 50%;
+}
+#Misc {
+	background-image: linear-gradient(#8B33F2,#2CCCEF);
+	height : 50%;
+}
+#Sub {
+	height: 5%;
+	width: 50%;
 }
 h1 {
-	margin-top: 0;
+	margin-top: 5%;
 	font-size: 50px;
 	font-family: Courier;
 }
-
 h2 {
 	margin-top: 0;
-	font-size: 30px;
-	font-family: Verdana;
+	font-size : 35px;
+	font-family : Courier;
 }
-
-p1 {
-	font-size: 30px;
-	font-family: Verdana;
-}
-
-p2 {
+p {
+	margin-top: 0;
 	font-size: 20px;
-	font-family: Verdana;
+	font-family: Courier;
 }
-div{
-	margin: 0; 
+div {
+	margin: 0;
 }
+a:link {
+	color: black;
+}
+a:visited {
+	color:purple;
+}
+a:hover {
+	color: blue;
+}
+a:active {
+	color: orange;
+}
+
 
 </style>
-</head>
 
-	<body>
-		<div id = "grad" class = "clearfix">
-			<img class = "img" src = "image.jpeg" alt = "Photo" width = "240" height = "320">
+<body>
+	<div id = "Header" class = "clearfix">
+	<div id = "Sub" class = "inner">
+		<button onclick = "openTab('Home')" class = "button"> Home </button>
+		<button onclick = "openTab('Teaching')" class = "button"> Teaching </button>
+		<button onclick = "openTab('Misc')" class = "button"> Misc </button>
+	</div>
+
+			<img class = "img" src = "image.jpeg" alt = "Photo">
 		
 		<h1>
 			Liam Riordan
 		</h1>
 
 		
-		<p1> University of Bath <br>
+		<p> University of Bath <br>
 		Mathematical Sciences <br>
 		3rd Year PhD student <br>
 		lrr27 at bath dot ac dot uk <br>
 		Supported by a Heilbronn studentship
-		</p1>
+		</p>
 
 
-		</div>
+	</div>
 
 
-		<div id = "grad2">
+<div id = "Home" class = "tab">
+	<p>			I am a PhD student at the University of Bath under the supervision of Xiuping Su. My research is centred around cluster algebras on Grassmannians, their quantum counterparts and the role of quiver Grassmannians in this picture. In fact any bit of maths containing the word Grassmannian is probably of great interest to me. Once I have some papers to display I will add a section for these below. If you are interested in any of the following topics then let me know:
+	<ul class = "a">
+		<li> Coefficients of cluster characters and quantum cluster characters, </li>
+		<li> the geometry of quiver Grassmannians (related to the above topic), </li>
+		<li> cluster algebras and quantum cluster algebras in (homogeneous) coordinate rings of Lie-theoretic varieties. </li>
+	</a>
+	</p>
+</div>
 
-			<p2>
-			<br>
-			I am a PhD student at the University of Bath under the supervision of <a href = "https://people.bath.ac.uk/xs214/"> Xiuping Su</a>. My research is centred around cluster algebras on Grassmannians, their quantum counterparts and the role of quiver Grassmannians in this picture. In fact any bit of maths containing the word Grassmannian is probably of great interest to me. Once I have some papers to display I will add a section for these below.
-			</p2>
-		</div>
+<div id = "Teaching" class = "tab" style = "display:none" >
+	<h2>
+		Teaching
+	</h2>
+	<p>
+	Currently teaching: Cryptography (CM30173).
+	</p>
+	<p> 
+	In previous semesters I tutored either the first or second year algebra module in some various combinations. These modules are <a href = "https://www.bath.ac.uk/catalogues/2020-2021/ma/MA10209.html"> Algebra 1A</a>, <a href = "https://www.bath.ac.uk/catalogues/2018-2019/ma/MA10210.html"> Algebra 1B</a>, <a href = "https://www.bath.ac.uk/catalogues/2012-2013/ma/MA20216.htm"> Algebra 2A</a> and <a href = "https://			www.bath.ac.uk/catalogues/2021-2022/ma/MA20217.html"> Algebra 2B</a>. I am now tutoring <a href = 'https://www.bath.ac.uk/catalogues/2022-2023/cm/CM30173.html'> Cryptography</a>. For my cryptography students, here is the link to the <a href = "https://github.com/LiRiordan/CM30173"> code/notes</a> from our tutorials. These will probably contain errors but could be helpful for you to look back over. I will try to update before each tutorial but given I often write them the evening before this may not always be true.
+	</p>
+</div>
 
-		<div id = "grad3">
-			<br>
-			<h2>
-				Teaching
-			</h2>			
+<div id = "Misc" class = "tab" style = "display:none">
+	<h2>
+		Miscellaneous
+		
+	</h2>
+	<p>
+	This page will probably collect some random odds and ends. For the moment, here is my <a href = "https://github.com/LiRiordan">github</a>. Some of the projects in here are: 
+	<ul class = "a">
+		<li> <a href = "https://github.com/LiRiordan/KWIVAH">KWIVAH</a> is a python file which I have added to at various point so that it performs quiver/cluster computations for me. I will probably try to clean it up a bit
+			at some point. </li>
+		<li> <a href = "https://github.com/LiRiordan/XGBoostvsNeuralNetwork">XGvsNN</a> is a python script which I wrote for a presentation to the Heilbronn summer school in 2022. It allows the user to plug in a function
+			depending on two variables and then uses XGBoost and a Neural network to learn this function and plots the outcomes with corresponding errors. </li>
+		<li> <a href = "https://github.com/LiRiordan/CM30173">CM30173</a> is for my cryptography students but contains many related scripts. For example it contains an implementation of linear and differential cryptanalysis
+			against SPN ciphers. </li>
+		
+	</a>
+	</p>
+</div>
+</body>
 
-			<p2>
+<script>
+function openTab(title) {
+	var i;
+	var x = document.getElementsByClassName("tab");
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";
+	}
+	document.getElementById(title).style.display =
+	"block"
+}
+</script>
 
-			In previous semesters I tutored either the first or second year algebra module in some various combinations. These modules are <a href = "https://www.bath.ac.uk/catalogues/2020-2021/ma/MA10209.html"> Algebra 1A</a>, <a href = "https://www.bath.ac.uk/catalogues/2018-2019/ma/MA10210.html"> Algebra 1B</a>, <a href = "https://www.bath.ac.uk/catalogues/2012-2013/ma/MA20216.htm"> Algebra 2A</a> and <a href = "https://			www.bath.ac.uk/catalogues/2021-2022/ma/MA20217.html"> Algebra 2B</a>. I am now tutoring <a href = 'https://www.bath.ac.uk/catalogues/2022-2023/cm/CM30173.html'> Cryptography</a>. For my cryptography students, here is the link to the <a href = "https://github.com/LiRiordan/CM30173"> code/notes</a> from our tutorials. These will probably contain errors but could be helpful for you to look back over. I will try to update before each tutorial but given I often write them the evening before this may not always be true.
-			</p2>
-
-		</div>
-
-		<div id = "grad4">
-
-			<br>
-
-
-			<h2>
-				Conferences and organisation
-			</h2>
-			
-
-			<p2>
-			<ul class = "a">			
-			
-			<li>I was in Aarhus, Denmark helping my supervisor Xiuping Su teach the exercise classes during the Masterclass conference <a href = "https://conferences.au.dk/categoriesclusterscompletions2023"> Categories, clusters and completions</a> (22/03 - 24/03). </li>
-
-
-			</p2>
-			<li> I was at CIRM (27/11/23-01/12/23) for the conference on <a href = "https://conferences.cirm-math.fr/2875.html"> Current trends in representation theory, cluster algebras and geometry</a>.
-			</li>
-
-			<li> During 17-19 January I co-organised the graduate meeting for an <a href = "https://sites.google.com/view/lms-regional-meeting-2023-sout?usp=sharing"> LMS conference</a>.  
-			</li>
-
-
-		</div>
-
-
-
-
-
-
-
-
-
-
-	</body>
-</html>
